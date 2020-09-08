@@ -1,0 +1,289 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Step 1</title>
+    <link rel="stylesheet" href="../src/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../src/vendor/css/font-awesome.min.css" />
+    <link href="../src/scss/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="home-menu-top">
+            <div class="container">
+                <div class="row ct-row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 ct-col">
+                        <h1 class="logo-home">
+                            <a href="/"><img alt="" src="static/images/logo-unica.svg" /></a>
+                        </h1>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-5 ct-col">
+                        <form class="navbar-form form-group ct-search-box">
+                            <input type="text" class="form-control ct-form-input" placeholder="Tìm khóa học, giảng viên" />
+                            <button class="btn btn-home-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-lg-5 col-md-4 col-sm-5 ct-col">
+                        <div class="ct-d-flex">
+                            <a href="/" class="btn-active-course"><p class="hidden-md hidden-xs hidden-sm">Kích hoạt khóa học</p><i class="fa fa-unlock-alt" aria-hidden="true"></i></a>
+                            <a href="/" class="btn-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="ct-sl-cart"><b>0</b></span></a>
+                            <ul class="list-acc-zone">
+                                <li><a class="btn-reg-acc" href="/">ĐĂNG NHẬP</a></li>
+                                <li><a class="btn-log-acc" href="/">ĐĂNG KÝ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="breadcurm-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="cart-box-step">
+                            <div class="cart-navi">
+                                <ul class="steps">
+                                    <li data-step="1" class="active">
+                                        <span class="step">1</span>
+                                        <span class="title">Thông tin</span>
+                                    </li>
+                                    <li data-step="2">
+                                        <span class="step">2</span>
+                                        <span class="title">Thanh toán</span>
+                                    </li>
+                                    <li data-step="3">
+                                        <span class="step">3</span><span class="title">Vào học</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lg-order-cart">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-7 col-cart-table">
+                        <div class="u-box-cart-title2">
+                            <p>Thông tin người đặt hàng</p>
+                        </div>
+                        <div class="u-box-cart2">
+                            <form class="form-inline" id="customer_form">
+                                <div class="line-input row mt-10">
+                                    <div class="col-12">
+                                        <label for="inputEmail">Họ tên <span class="required">*</span></label>
+                                        <input required="" type="text" id="cust_name" value="" placeholder="Họ và tên" name="txtName" class="name form-control">
+                                    </div>
+                                </div>
+                                <div class="line-input row mt-10">
+                                    <div class="col-12">
+                                        <label for="inputEmail">Email <span class="required">*</span></label>
+                                        <input required="" type="email" id="cust_email" name="txtEmail" value="" placeholder="Email" class="email form-control">
+                                    </div>
+                                </div>
+                                <div class="line-input row mt-10">
+                                    <div class="col-12">
+                                        <label for="inputEmail">
+                                            Điện thoại
+                                            <span class="required">
+                                                *
+                                                <small class="noti-phone" style="display: none;font-size: 11px;">(Có vẻ số điện thoại của bạn chưa chính xác, vui lòng kiểm tra lại!)</small>
+                                            </span>
+                                        </label>
+                                        <input required="" type="tel" id="cust_phone" name="txtMobile" value="" placeholder="Số điện thoại" class="telephone form-control">
+                                    </div>
+                                </div>
+                                <div class="line-input row mt-10">
+                                    <div class="col-6 col-12-full">
+                                        <div class="line-input row">
+                                            <div class="col-12">
+                                                <label for="inputEmail">Tỉnh/Thành phố <span class="required">*</span></label>
+                                                <select name="city" class="province_id form-control" required="required">
+                                                    <option value="" disabled="" selected="">-- Chọn tỉnh/thành phố --</option>
+                                                    <option value="">Hà Nội</option>
+                                                    <option value="">Hồ Chí Minh</option>
+                                                    <option value="">An Giang</option>
+                                                    <option value="">Bắc Giang</option>
+                                                    <option value="">Bắc Kạn</option>
+                                                    <option value="">Bạc Liêu</option>
+                                                    <option value="">Bắc Ninh</option>
+                                                    <option value="">Bà Rịa - Vũng Tàu</option>
+                                                    <option value="">Bến Tre</option>
+                                                    <option value="">Bình Dương</option>
+                                                    <option value="">Bình Phước</option>
+                                                    <option value="">Bình Thuận</option>
+                                                    <option value="">Bình Định</option>
+                                                    <option value="">Cà Mau</option>
+                                                    <option value="">Cao Bằng</option>
+                                                    <option value="">Cần Thơ</option>
+                                                    <option value="">Đà Nẵng</option>
+                                                    <option value="">Đăk Lăk</option>
+                                                    <option value="">Đăk Nông</option>
+                                                    <option value="">Điện Biên</option>
+                                                    <option value="">Đồng Nai</option>
+                                                    <option value="">Đồng Tháp</option>
+                                                    <option value="">Gia Lai</option>
+                                                    <option value="">Hà Giang</option>
+                                                    <option value="">Hà Nam</option>
+                                                    <option value="">Hải Dương</option>
+                                                    <option value="">Hải Phòng</option>
+                                                    <option value="">Hà Tĩnh</option>
+                                                    <option value="">Hậu Giang</option>
+                                                    <option value="">Hòa Bình</option>
+                                                    <option value="">Hưng Yên</option>
+                                                    <option value="">Khánh Hòa</option>
+                                                    <option value="">Kiên Giang</option>
+                                                    <option value="">Kon Tum</option>
+                                                    <option value="">Lai Châu</option>
+                                                    <option value="">Lâm Đồng</option>
+                                                    <option value="">Lạng Sơn</option>
+                                                    <option value="">Lào Cai</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button type="submit" name="step2_submit" class="btn-one button-continue" id="customer_submit">Tiếp theo <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-5 col-cart-table2">
+                        <div class="u-cart-price2">
+                            <p>&nbsp;</p>
+                            <div class="u-box-cart2">
+                                <div class="u-c-title">
+                                    <p>Đơn hàng (2 khóa học)</p>
+                                    <a href="gio-hang.html"><i class="fa fa-edit"></i> Sửa</a>
+                                </div>
+                                <div class="u-cart-course">
+                                    <div class="title-cart-course">
+                                        Học đệm hát Guitar cùng Haketu
+                                    </div>
+                                    <div class="price-cart">
+                                        <p style="float: right;">549,000<sup>đ</sup></p>
+                                        <span>700,000<sup>đ</sup></span>
+                                    </div>
+                                </div>
+                                <div class="u-cart-course">
+                                    <div class="title-cart-course">
+                                        10 Ngày eo thon dáng đẹp cùng zumba
+                                    </div>
+                                    <div class="price-cart">
+                                        <p style="float: right;">549,000<sup>đ</sup></p>
+                                        <span>600,000<sup>đ</sup></span>
+                                    </div>
+                                </div>
+                                <div class="total-cart"><p>Thành tiền</p><span class="thanh_tien">1,098,000<sup>đ</sup></span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-6 hei2 pdr pdl">
+                        <span class="logo-footer">
+                            <a href="/"><img src="static/images/logo-footer.png"></a>
+                        </span>
+                        <ul>
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>247 Cầu Giấy, Hà Nội</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>323A Lê Quang Định, TP HCM</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <a href="tel:0904886095">090 488 6095</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <span>cskh@unica.vn </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>8:00 - 22:00 </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-4 col-6">
+                        <h4>Về Unica</h4>
+                        <ul>
+                            <li><a href="/">Giới thiệu về Unica</a></li>
+                            <li><a href="/" rel="nofollow">Câu hỏi thường gặp</a></li>
+                            <li><a href="/" rel="nofollow">Điều khoản dịch vụ</a></li>
+                            <li><a href="/" rel="nofollow">Hướng dẫn thanh toán</a></li>
+                            <li><a href="/">Kích hoạt khóa học</a></li>
+                            <li><a href="/">Góc chia sẻ</a></li>
+                            <li><a href="/">Chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+                        <h4>Hợp tác liên kết</h4>
+                        <ul>
+                            <li><a href="/">Đăng ký giảng viên</a></li>
+                            <li><a href="/" target="_blank" rel="nofollow">Giải pháp e-learning</a></li>
+                            <li><a href="/" target="_blank">Đào tạo doanh nghiệp</a></li>
+                            <li><a href="/" target="_blank" rel="nofollow">Tuyển dụng nhân tài</a></li>
+                            <li><a href="/">Thẻ học online</a></li>
+                            <li><a href="/">Affiliate</a></li>
+                            <li><a href="/">Agency</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-4 col-6 ct-app">
+                        <div class="app-connect">
+                            <h4>Tải app Unica</h4>
+                            <ul>
+                                <li><a href="/" rel="nofollow"><img alt="App Store" src="static/images/appstore.png"></a></li>
+                                <li><a href="/" rel="nofollow"><img alt="Google Play" src="static/images/playstore.png"></a></li>
+                            </ul>
+                        </div>
+                        <div class="social-connect">
+                            <h4>Kết nối với Unica</h4>
+                            <ul>
+                                <li><a href="/" rel="nofollow" class="social-fb"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="/" rel="nofollow" class="social-yt"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-12">
+                        <p>© iNET - Học viện Online Unica - Khóa học trực tuyến dành cho người đi làm - Cổng kết nối Chuyên gia với Học viên</p>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-12">
+                        <a href="/" target="_blank" rel="nofollow"><img src="static/images/bct.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../src/vendor/jquery.min.js"></script>
+    <script src="../src/vendor/bootstrap.min.js"></script>
+    <script src="../src/js/pages/order.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Open Sans:400,400i,600,700,800']
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+@mixin placeholder {
+    &::-webkit-input-placeholder {
+        font-style: italic;
+    }
+
+    &:-moz-placeholder {
+        font-style: italic;
+    }
+
+    &::-moz-placeholder {
+        font-style: italic;
+    }
+
+    &:-ms-input-placeholder {
+        font-style: italic;
+    }
+}
+.home-menu-top {
+    position: fixed;
+    top: 0px;
+    z-index: 9;
+    width: 100%;
+    background: #fff;
+    padding: 6px 0;
+    .ct-row {
+        margin: 0 auto;
+
+        .ct-col {
+            display: flex;
+            align-content: center;
+        }
+    }
+
+    .logo-home {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        color: #555;
+        margin: 0;
+
+        a {
+            display: block;
+            width: 138px;
+        }
+    }
+
+    .ct-search-box {
+        margin-top: 4px;
+        margin-bottom: 0;
+        position: relative;
+        width: 100%;
+
+        input {
+            border: 0 none;
+            box-shadow: none;
+            background: #ebebeb;
+            border-radius: 20px;
+            height: 40px;
+            @include placeholder;
+        }
+
+        button {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: transparent;
+            color: #f26c4f;
+            font-size: 20px;
+            padding: 4px 15px;
+        }
+    }
+
+    .ct-d-flex {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .btn-active-course {
+            padding: 9px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            color: #fff;
+            background: #00aeef;
+
+            &:hover {
+                background: #f26c4f;
+                color: #fff;
+                border: 1px solid #ccc;
+            }
+
+            p {
+                display: inline;
+            }
+
+            i {
+                margin-left: 10px;
+            }
+        }
+
+        .btn-cart {
+            color: #EC5252;
+            margin-left: 15px;
+            position: relative;
+
+            i {
+                font-size: 24px;
+            }
+
+            .ct-sl-cart {
+                font-size: 10px;
+                border-radius: 25px;
+                border: 1px solid #ccc;
+                position: absolute;
+                top: -14px;
+                left: unset;
+                padding: 1px 5px;
+            }
+        }
+
+        .list-acc-zone {
+            display: flex;
+        }
+
+        .btn-reg-acc {
+            padding: 9px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            color: #000;
+        }
+
+        .btn-log-acc {
+            border: 1px solid #f26c4f;
+            padding: 9px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            color: #fff;
+            background: #f26c4f;
+        }
+    }
+}

@@ -1,0 +1,399 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment</title>
+    <link rel="stylesheet" href="../src/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="../src/vendor/css/font-awesome.min.css" />
+    <link href="../src/scss/main.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <div class="home-menu-top">
+            <div class="container">
+                <div class="row ct-row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 ct-col">
+                        <h1 class="logo-home">
+                            <a href="/"><img alt="" src="static/images/logo-unica.svg" /></a>
+                        </h1>
+                    </div>
+                    <div class="col-lg-5 col-md-6 col-sm-5 ct-col">
+                        <form class="navbar-form form-group ct-search-box">
+                            <input type="text" class="form-control ct-form-input" placeholder="Tìm khóa học, giảng viên" />
+                            <button class="btn btn-home-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                    <div class="col-lg-5 col-md-4 col-sm-5 ct-col">
+                        <div class="ct-d-flex">
+                            <a href="/" class="btn-active-course"><p class="hidden-md hidden-xs hidden-sm">Kích hoạt khóa học</p><i class="fa fa-unlock-alt" aria-hidden="true"></i></a>
+                            <a href="/" class="btn-cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="ct-sl-cart"><b>0</b></span></a>
+                            <ul class="list-acc-zone">
+                                <li><a class="btn-reg-acc" href="/">ĐĂNG NHẬP</a></li>
+                                <li><a class="btn-log-acc" href="/">ĐĂNG KÝ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="unica-order-cart">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="cart-box-step">
+                            <div class="cart-navi">
+                                <ul class="steps">
+                                    <li data-step="1" class="active">
+                                        <span class="step">1</span>
+                                        <span class="title">Thông tin</span>
+                                    </li>
+                                    <li data-step="2" class="active">
+                                        <span class="step">2</span><span class="title">Thanh toán</span>
+                                    </li>
+                                    <li data-step="3">
+                                        <span class="step">3</span><span class="title" style="color: #4F4F4F;">Vào học</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-cart-table">
+                        <div class="u-box-cart-title2 text-center">
+                            <div class="form-group">
+                                <h1>THANH TOÁN ĐƠN HÀNG #xxxx</h1>
+                            </div>
+                            <div class="form-group">
+                                <span>Khách hàng: xxx - Trạng thái: Chưa thanh toán</span>
+                            </div>
+                            <br>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <div class="form-group">
+                                    <span>Bạn vui lòng chọn một trong các phương thức thanh toán dưới đây!</span><br>
+                                </div>
+                                <input type="hidden" id="order_id" name="order_id" value="">
+                                <div class="u-box-cart3">
+                                    <form method="POST" action="">
+                                        <div class="panel-group" id="accordion">
+                                            <div class="panel panel-default" pay-type="atm_panel">
+                                                <div class="panel-heading" data-toggle="collapse" href="#banking-cart">
+                                                    <h4 class="panel-title">
+                                                        <a>
+                                                            <i class="fa fa-credit-card-alt" aria-hidden="true"></i> Thẻ
+                                                            ATM, Internet Banking
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="banking-cart" class="panel-collapse collapse show" data-parent="#accordion" style="">
+                                                    <div class="panel-body">
+                                                        Bạn cần có tài khoản Internet Banking để tiến hành thanh toán
+                                                        <br> Hỗ trợ tất cả các ngân hàng tại Việt Nam: VCB, ACB, Sacombank,
+                                                        BIDV,...
+                                                        <br><br>
+                                                        <a class="btn btn-success btn-cl-or" href="/">Thanh toán ngay</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default" pay-type="visa_panel">
+                                                <div class="panel-heading" data-toggle="collapse" href="#visa-glob">
+                                                    <h4 class="panel-title">
+                                                        <a>
+                                                            <i class="fa fa-cc-visa" aria-hidden="true"></i> Thẻ quốc tế (Visa, Master, JCB)
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="visa-glob" class="panel-collapse collapse" data-parent="#accordion">
+                                                    <div class="panel-body">
+                                                        Hỗ trợ Credit và Debit.
+                                                        <br>
+                                                        <p>Bạn sẽ được chuyển tới cổng Onepay để thanh toán.</p>
+                                                        <br>
+                                                        <a class="btn btn-success btn-cl-or" href="/">Thanh toán ngay</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default momo-panel" pay-type="momo-panel">
+                                                <div class="panel-heading" data-toggle="collapse" href="#momo">
+                                                    <h4 class="panel-title">
+                                                        <a>
+                                                            <img src="static/images/logo.png" style="width: 32px;height: 20px;margin-right: 7px;">
+                                                            <span style="top: 3px;position: relative;">Thanh toán qua Ví điện tử MoMo</span>
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="momo" class="panel-collapse collapse" data-parent="#accordion">
+                                                    <div class="panel-body">
+                                                        Thanh toán bằng tài khoản MoMo
+                                                        <br>
+                                                        <p>Bạn sẽ được chuyển tới cổng MoMo để thanh toán.</p>
+                                                        <br>
+                                                        <a class="btn btn-success btn-cl-or" href="/">Thanh toán ngay</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default paypal-panel" pay-type="paypal-panel">
+                                                <div class="panel-heading" data-toggle="collapse" href="#paypal-payment">
+                                                    <h4 class="panel-title">
+                                                        <a>
+                                                            <i class="fa fa-cc-paypal" aria-hidden="true"></i> Thanh toán qua Paypal
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="paypal-payment" class="panel-collapse collapse" data-parent="#accordion">
+                                                    <div class="panel-body">
+                                                        Thanh toán bằng tài khoản Paypal
+                                                        <br><p>Bạn sẽ được chuyển tới cổng Napas để thanh toán.</p>
+                                                        <br>
+                                                        <a class="btn btn-success btn-cl-or" href="/">Thanh toán ngay</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="panel panel-default paypal-panel" pay-type="paypal-panel">
+                                                <div class="panel-heading" data-toggle="collapse" href="#payment-bank">
+                                                    <h4 class="panel-title">
+                                                        <a>
+                                                            <img src="static/images/credit-card.svg" style="width: 31px;height: 30px;margin-right: 9px;margin-top: -8px;">
+                                                            <span style="top: 3px;position: relative;">Chuyển khoản ngân hàng</span>
+                                                        </a>
+                                                    </h4>
+                                                </div>
+                                                <div id="payment-bank" class="panel-collapse collapse" data-parent="#accordion">
+                                                    <div class="panel-body">
+                                                        <ul class="list-group">
+                                                            <li style="background-color: #fff !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2">Tên tài khoản</div>
+                                                                    <div class="col-md-10">Công ty Cổ phần đào tạo trực tuyến Unica</div>
+                                                                </div>
+                                                            </li>
+                                                            <li style="background-color: #fff !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2">Nội dung chuyển khoản</div>
+                                                                    <div class="col-md-10"><b>Thanh toán đơn hàng 822227</b></div>
+                                                                </div>
+                                                            </li>
+                                                            <li style="background-color: #fff !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2"><b>Ngân hàng</b></div>
+                                                                    <div class="col-md-6">&nbsp;</div>
+                                                                    <div class="col-md-4"><b>Số tài khoản</b></div>
+                                                                </div>
+                                                            </li>
+                                                            <li style="background-color: #fff !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2">
+                                                                        <img class="img-responsive" src="static/images/logo-vietcombank.png">
+                                                                    </div>
+                                                                    <div class="col-md-6">Vietcombank - chi nhánh Thăng Long, Hà Nội</div>
+                                                                    <div class="col-md-4"><b>0491000106169</b></div>
+                                                                </div>
+                                                            </li>
+                                                            <li style="background-color: #fff !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2">
+                                                                        <img class="img-responsive" src="static/images/logo-mb.png">
+                                                                    </div>
+                                                                    <div class="col-md-6">MB - chi nhánh Trần Duy Hưng, Hà Nội</div>
+                                                                    <div class="col-md-4">
+                                                                        <b>0081101037002</b>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <li style="background-color: #fff !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2">
+                                                                        <img class="img-responsive" src="static/images/logo-acb.png">
+                                                                    </div>
+                                                                    <div class="col-md-6">ACB - PGD Trần Quốc Hoàn</div>
+                                                                    <div class="col-md-4"><b>10158888</b></div>
+                                                                </div>
+                                                            </li>
+                                                            <li style="background-color: #fff !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2"><img class="img-responsive" src="static/images/logo-vietinbank.png"></div>
+                                                                    <div class="col-md-6">Vietinbank - chi nhánh Tây Hà Nội</div>
+                                                                    <div class="col-md-4"><b>115000195434</b></div>
+                                                                </div>
+                                                            </li>
+                                                            <li style="background-color: #fff !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2"><img class="img-responsive" src="static/images/logo-techcombank.png"></div>
+                                                                    <div class="col-md-6">Techcombank - Hội sở Hà Nội</div>
+                                                                    <div class="col-md-4"><b>19130976250011</b></div>
+                                                                </div>
+                                                            </li>
+                                                            <li style="background-color: #fff !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2"><img class="img-responsive" src="static/images/logo-sacombank.png"></div>
+                                                                    <div class="col-md-6">Sacombank - chi nhánh Đông Đô</div>
+                                                                    <div class="col-md-4"><b>020047799016</b></div>
+                                                                </div>
+                                                            </li>
+                                                            <li style="background-color: #fff !important;border-bottom: 1px solid #ccc !important;" class="list-group-item">
+                                                                <div class="row">
+                                                                    <div class="col-md-2"><img class="img-responsive" src="static/images/logo-bidv.png"></div>
+                                                                    <div class="col-md-6">BIDV - chi nhánh Cầu Giấy</div>
+                                                                    <div class="col-md-4"><b>21510002115464</b></div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                        <br>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-lg-5">
+                                <div class="form-group">
+                                    <span style="color:red; text-transform: uppercase;white-space:nowrap">Thanh toán Online để được giảm 10% và vào học được ngay</span>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading"><b>Khóa học</b></div>
+                                    <div class="panel-body">
+                                        <div class="u-cart-course">
+                                            <div class="title-cart-course" style="width: 65%;">
+                                                10 Ngày eo thon dáng đẹp cùng zumba
+                                            </div>
+                                            <div class="price-cart" style="width: 35%;">
+                                                <b style="color: #6F6F6F;font-size: 18px;">
+                                                    549,000<sup>đ</sup>
+                                                </b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="panel-footer">
+                                        <div class="form-group">
+                                            <b>TỔNG CỘNG</b>
+                                            <div class="pull-right" style="color: #6F6F6F; font-size: 21px;">
+                                                <b style="margin-top: 5px;">549,000<sup>đ</sup></b>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <span>Giảm <b>10%</b> khi thanh toán online</span>
+                                            <div class="pull-right" style="color: #6F6F6F; font-size: 18px;">
+                                                <p style="font-weight: normal">54,900<sup>đ</sup></p>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <b>SỐ TIỀN THANH TOÁN</b><div class="pull-right" style="color: #ec5252; font-size: 21px;">
+                                                <b style="margin-top: 5px;">494,100<sup>đ</sup></b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-6 hei2 pdr pdl">
+                        <span class="logo-footer">
+                            <a href="/"><img src="static/images/logo-footer.png"></a>
+                        </span>
+                        <ul>
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>247 Cầu Giấy, Hà Nội</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                                <span>323A Lê Quang Định, TP HCM</span>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <a href="tel:0904886095">090 488 6095</a>
+                            </li>
+                            <li>
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <span>cskh@unica.vn </span>
+                            </li>
+                            <li>
+                                <i class="fa fa-clock-o" aria-hidden="true"></i>
+                                <span>8:00 - 22:00 </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-4 col-6">
+                        <h4>Về Unica</h4>
+                        <ul>
+                            <li><a href="/">Giới thiệu về Unica</a></li>
+                            <li><a href="/" rel="nofollow">Câu hỏi thường gặp</a></li>
+                            <li><a href="/" rel="nofollow">Điều khoản dịch vụ</a></li>
+                            <li><a href="/" rel="nofollow">Hướng dẫn thanh toán</a></li>
+                            <li><a href="/">Kích hoạt khóa học</a></li>
+                            <li><a href="/">Góc chia sẻ</a></li>
+                            <li><a href="/">Chính sách bảo mật</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-6">
+                        <h4>Hợp tác liên kết</h4>
+                        <ul>
+                            <li><a href="/">Đăng ký giảng viên</a></li>
+                            <li><a href="/" target="_blank" rel="nofollow">Giải pháp e-learning</a></li>
+                            <li><a href="/" target="_blank">Đào tạo doanh nghiệp</a></li>
+                            <li><a href="/" target="_blank" rel="nofollow">Tuyển dụng nhân tài</a></li>
+                            <li><a href="/">Thẻ học online</a></li>
+                            <li><a href="/">Affiliate</a></li>
+                            <li><a href="/">Agency</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-4 col-6 ct-app">
+                        <div class="app-connect">
+                            <h4>Tải app Unica</h4>
+                            <ul>
+                                <li><a href="/" rel="nofollow"><img alt="App Store" src="static/images/appstore.png"></a></li>
+                                <li><a href="/" rel="nofollow"><img alt="Google Play" src="static/images/playstore.png"></a></li>
+                            </ul>
+                        </div>
+                        <div class="social-connect">
+                            <h4>Kết nối với Unica</h4>
+                            <ul>
+                                <li><a href="/" rel="nofollow" class="social-fb"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="/" rel="nofollow" class="social-yt"><i class="fa fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-10 col-md-10 col-sm-10 col-12">
+                        <p>© iNET - Học viện Online Unica - Khóa học trực tuyến dành cho người đi làm - Cổng kết nối Chuyên gia với Học viên</p>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-12">
+                        <a href="/" target="_blank" rel="nofollow"><img src="static/images/bct.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../src/vendor/jquery.min.js"></script>
+    <script src="../src/vendor/bootstrap.min.js"></script>
+    <script src="../src/js/pages/order.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ['Open Sans:400,400i,600,700,800']
+            }
+        });
+    </script>
+</body>
+</html>

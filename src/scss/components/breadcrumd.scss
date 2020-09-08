@@ -1,0 +1,102 @@
+.breadcurm-page {
+    background: #1d9fc7;
+
+    .breadcrumb {
+        padding: 35px 0;
+        margin-bottom: 0;
+        background: #1d9fc7;
+
+        .breadcrumb-item {
+            display: list-item;
+
+            &.active {
+                color: #fff;
+                font-size: 30px;
+                margin-top: 5px;
+            }
+        }
+    }
+}
+/*page order*/
+.cart-box-step {
+    display: inline-block;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.steps {
+    list-style: none;
+    display: table;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    position: relative;
+
+    li {
+        display: table-cell;
+        text-align: center;
+        width: 1%;
+
+        &:before {
+            display: block;
+            content: "";
+            width: 100%;
+            height: 1px;
+            font-size: 0;
+            overflow: hidden;
+            border-top: 4px solid #CED1D6;
+            position: relative;
+            top: 21px;
+            z-index: 1;
+        }
+
+        &.active:before {
+            border-color: #12cbec;
+        }
+
+        &:first-child:before {
+            max-width: 51%;
+            left: 50%;
+        }
+
+        &:last-child:before {
+            max-width: 50%;
+            width: 50%;
+        }
+
+        .step {
+            border: 5px solid #ced1d6;
+            color: #546474;
+            font-size: 15px;
+            border-radius: 100%;
+            background-color: #FFF;
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        &.active .step {
+            border-color: #12cbec;
+        }
+
+        .title {
+            display: block;
+            margin-top: 4px;
+            max-width: 100%;
+            color: #fff;
+            font-size: 14px;
+            z-index: 104;
+            text-align: center;
+            table-layout: fixed;
+            word-wrap: break-word;
+        }
+
+        &.active .title {
+            color: #fff;
+        }
+    }
+}

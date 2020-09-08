@@ -1,0 +1,348 @@
+.section-cart-null {
+    .ct-box-cart-title {
+        margin: 45px 10px 0;
+        text-align: center;
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .ct-box-cart {
+        text-align: center;
+        padding: 20px;
+        margin: 10px 0;
+
+        i {
+            font-size: 120px;
+            color: #ccc;
+        }
+
+        .ct-cart-txt {
+            font-size: 20px;
+        }
+
+        .btn-cart {
+            background: #ec5252;
+            padding: 10px 15px;
+            font-weight: bold;
+            color: #fff;
+            display: inline-block;
+            margin: 10px 0;
+            border-radius: 3px;
+            border: none;
+        }
+    }
+}
+
+.section-cart {
+    .section-order-cart {
+        background: #e8e8e8;
+
+        .col-cart {
+            margin-top: 10px;
+        }
+
+        .box-cart {
+            border: 1px solid #eee;
+            padding: 10px;
+            margin: 10px 0;
+            display: inline-block;
+            width: 100%;
+            position: relative;
+            background: #fff;
+        }
+
+        .ct-cart-course {
+            display: flex;
+            border-bottom: 1px solid #dedfe0;
+            padding-bottom: 10px;
+            padding-top: 10px;
+
+            &:last-child {
+                border: 0;
+                padding-bottom: 0;
+            }
+
+            .thumnail {
+                margin-right: 10px;
+                width: 20%;
+            }
+
+            .name {
+                text-align: left;
+                width: 70%;
+                line-height: 1.5em;
+
+                a {
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                    display: block;
+                }
+            }
+
+            .price-cart {
+                width: 30%;
+                text-align: right;
+
+                p {
+                    font-size: 20px;
+                    font-weight: bold;
+                    margin-bottom: 6px;
+                }
+
+                sup {
+                    font-size: 14px;
+                }
+
+                span {
+                    text-decoration: line-through;
+
+                    sup {
+                        font-size: 10px;
+                    }
+                }
+            }
+
+            .remove-course {
+                cursor: pointer;
+                width: 5%;
+                font-size: 16px;
+                color: #f00;
+                position: relative;
+                top: 3px;
+                left: 17px;
+            }
+        }
+
+        .btn-more-course {
+            z-index: 99;
+
+            a {
+                color: #03A9F4;
+                font-weight: bold;
+            }
+        }
+
+        .ct-sum-cart {
+            margin-top: 15px;
+        }
+
+        .price-cart-box {
+            display: inline-block;
+            width: 100%;
+            margin: 0 0 10px 0;
+        }
+
+        .price-cart-1 {
+            color: #ec5252;
+            font-size: 26px;
+            font-weight: bold;
+            padding-top: 10px;
+
+            sup {
+                font-size: 14px;
+            }
+        }
+
+        .price-btn-box {
+            margin-bottom: 15px;
+
+            .btn-one {
+                background-color: #F26C4F;
+                width: 100%;
+                padding: 12px;
+                border: none;
+                border-radius: 5px;
+                text-align: center;
+                text-transform: uppercase;
+                color: #fff;
+                font-weight: bold;
+                display: inline-block;
+            }
+        }
+    }
+
+    .relate-product {
+        background-color: #f1f1f1;
+    }
+
+    .relate-course {
+        display: block;
+
+        .title-course {
+            margin-left: 20px;
+            font-size: 24px;
+            margin: 10px 5px;
+        }
+    }
+}
+
+@mixin style-btn-owl {
+    position: absolute;
+    top: 35%;
+    font-size: 25px !important;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #ccc !important;
+    outline: none;
+}
+
+.box-product-relate {
+    .owl-nav {
+
+        .owl-prev {
+            @include style-btn-owl;
+            left: -26px;
+        }
+
+        .owl-next {
+            @include style-btn-owl;
+            right: -26px;
+        }
+    }
+}
+
+.product-relate-item {
+    max-width: 228px;
+    padding-bottom: 20px;
+
+    .product-cart {
+        color: #000;
+        display: inline-block;
+        background: #fff;
+        border-radius: 5px;
+
+        .img-course {
+            img {
+                border-radius: 5px 5px 0 0;
+            }
+        }
+
+        .content-course {
+            padding: 5px 7px;
+
+            .title-course {
+                height: 42px;
+                font-size: 15px;
+                overflow: hidden;
+                margin: 5px 0;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+
+                span {
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 21px;
+                }
+            }
+
+            .name-gv {
+                font-size: 12px;
+                color: #555;
+                min-height: 18px;
+                margin: 10px 0 0px 0;
+
+                b {
+                    font-weight: normal;
+                    min-height: 17px;
+                    overflow: hidden;
+                    display: block;
+                    max-height: 17px;
+                }
+            }
+
+            .rate-course {
+                margin: 5px 0;
+            }
+
+            .star-rate {
+                float: left;
+                margin-right: 5px;
+                margin-top: 1px;
+
+                i {
+                    font-size: 16px;
+                }
+
+                .co-or {
+                    color: #f26c4f;
+                }
+            }
+
+            .n-rate {
+                color: #464646;
+            }
+        }
+
+        .price-course {
+            padding: 7px;
+            border-radius: 5px;
+        }
+
+        .price-a {
+            font-size: 16px;
+            font-weight: 600;
+            float: right;
+            color: #f00;
+
+            sup {
+                font-size: 12px;
+            }
+        }
+
+        .price-b {
+            text-decoration: line-through;
+            float: right;
+            margin: 0 10px;
+            color: #888;
+
+            sup {
+                font-size: 10px;
+            }
+        }
+    }
+}
+
+.title-pop-course {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.time-course {
+    margin-bottom: 10px;
+
+    li {
+        display: inline;
+        margin-right: 20px;
+        color: #333;
+        font-size: 13px;
+    }
+}
+
+.des-gv-pop {
+    margin-bottom: 10px;
+}
+
+.des-course {
+    background: #f7f7f7;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.btn-add-cart {
+    margin: 15px 0 10px 0;
+    background: #f26c4f;
+    border-radius: 3px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    display: inline-block;
+    padding: 10px;
+    font-weight: bold;
+}
