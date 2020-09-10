@@ -9,6 +9,7 @@ const App = (function () {
       // Write code here
 
       require("./pages/home");
+      require("./pages/learning");
     },
     initAfterLoad: function () {
       console.log("Init Afrer Load");
